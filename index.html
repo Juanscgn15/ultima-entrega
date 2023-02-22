@@ -13,42 +13,37 @@
     <div class="row cabezal" >
         <div class="col-2 "> <img class="icono" src="./img/don juan.jpg" alt="Don Juan Ropa"> </div>
         <div class="col-8"></div>
-        <div class="col-2 "> <svg  class="icon" xmlns="http://www.w3.org/2000/svg" width="50" height="100" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+        <div class="col-2 "> <svg  class="icon" xmlns="http://www.w3.org/2000/svg" width="50" height="100" fill="currentColor" class="bi bi-cart" viewBox="0 -8 16 16">
             <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-          </svg></div>
+        </svg></div>
     </div>
 
     <div class="flexContainer">
-       
+    
         <div class="tarjeta"> <p class="titulo">Remera basica 8000$</p><img class= "imagen" src="./img/klos-ml411-13f496fafe070340b116632717308137-1024-1024.jpg" alt="remera basica">
-        <p class="eleccion"> <input type="checkbox" name="Negro" id="negro"> negro</p>
-        <p class="eleccion"> <input type="checkbox" name="gris" id="gris"> gris</p>
-        <p class="eleccion"> <input type="checkbox" name="blanco" id="blanco"> blanco</p>
+            <P class="unidades"> Unidades </P> <input id="Unidades-remeras" class="cantidad"  type="number"  min="1" max= "10" >
         <button  class="btn btn-primary" id="btnRemera">comprar</button></div>
-       
-    <div class="tarjeta"><p class="titulo">Chomba deportiva 10000$</p> <img class= "imagen" src="./img/chomba.jpg" alt=""> <p class="eleccion"> <input type="checkbox" name="Negro" id="negro"> negro</p>
-            <p class="eleccion"> <input type="checkbox" name="gris" id="gris"> gris</p>
-            <p class="eleccion"> <input type="checkbox" name="blanco" id="blanco"> blanco</p>
+
+    <div class="tarjeta"><p class="titulo">Chomba deportiva 10000$</p> <img class= "imagen" src="./img/chomba.jpg" alt=""> 
+        <P class="unidades"> Unidades </P> <input class="cantidad" id="Unidades-chombas" type="number"  min=1 max= 10 >
         <button class="btn btn-primary" id="btnChomba">comprar</button></div>
         
-        <div class="tarjeta"> <p class="titulo"> Camisas Don Juan 14000$ </p> <img class= "imagen" src="./img/camisa.jpg" alt=""> <p class="eleccion"> <input type="checkbox" name="Negro" id="negro"> negro</p>
-            <p class="eleccion"> <input type="checkbox" name="gris" id="gris"> gris</p>
-            <p class="eleccion"> <input type="checkbox" name="blanco" id="blanco"> blanco</p>
+        <div class="tarjeta"> <p class="titulo"> Camisas Don Juan 14000$ </p> <img class= "imagen" src="./img/camisa.jpg" alt=""> 
+            <P class="unidades"> Unidades </P> <input class="cantidad" id="Unidades-camisas" type="number"  min=1 max= 10 >
         <button class="btn btn-primary" id="btnCamisa">comprar</button></div>
         
     </div>
     <div class="flexContainer">
-        <div class="tarjeta"> <p class="titulo"> Pantalon de vestir 10000$ </p> <img class= "imagen" src="./img/pantalon.png" alt=""> <p class="eleccion"> <input type="checkbox" name="Negro" id="negro"> negro</p>
-            <p class="eleccion"> <input type="checkbox" name="gris" id="gris"> gris</p>
-            <p class="eleccion"> <input type="checkbox" name="blanco" id="blanco"> blanco</p>
+        <div class="tarjeta"> <p class="titulo"> Pantalon de vestir 10000$ </p> <img class= "imagen" src="./img/pantalon.png" alt="">
+            <P class="unidades"> Unidades </P> <input class="cantidad" id="Unidades-pantalones" type="number"  min=1 max= 10 > 
         <button class="btn btn-primary" id="btnPantalon">comprar</button></div>
-        <div class="tarjeta"> <p class="titulo">Zapatos 20000$</p><img class= "imagen" src="./img/zapatos png" alt=""> <p class="eleccion"> <input type="checkbox" name="Negro" id="negro"> negro</p>
-            <p class="eleccion"> <input type="checkbox" name="gris" id="gris"> gris</p>
-            <p class="eleccion"> <input type="checkbox" name="beige" id="beige"> beige</p>
+
+        <div class="tarjeta"> <p class="titulo">Zapatos 20000$</p><img class= "imagen" src="./img/zapatos png" alt=""> 
+            <P class="unidades"> Unidades </P> <input class="cantidad" id="Unidades-zapatos" type="number"  min= "1" max= "10" >
         <button class="btn btn-primary" id="btnZapatos">comprar</button></div>
     </div>
 
-    <div class="flexContainer"> <button class="btn btn-primary"> Finalizar compra </button></div>
+    <div class="flexContainer"> <button class="btn btn-primary" id="Finalizarcompra"> Finalizar compra </button></div>
 
 
     

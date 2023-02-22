@@ -18,6 +18,8 @@ const btnChomba = document.getElementById("btnChomba")
 const btnCamisa = document.getElementById("btncamisa")
 const btnPantalon = document.getElementById("btnpantalon")
 const btnZapatos = document.getElementById("btnZapatos")
+const  carritoFinal = carrito.reduce((acc,el)=> {
+    return acc + el.precio},0)
 
 //function
 
@@ -27,7 +29,7 @@ arry.push(articulo)
 }
 
 
-document.getElementById("btnRemera").onclick = function() {
+document.getElementById("btnRemera").onclick = function() { 
     Swal.fire({
         title: "Agregastes  al carrito!", 
         text: "Remera basica",
@@ -41,46 +43,108 @@ document.getElementById("btnRemera").onclick = function() {
         allowOutsideClick: true,
         allowEscapeKey: true,
         allowEnterKey: true,
-        // input:
-        // inputPlaceholder:
-        // inputValue:
-        // inputOptions:
-        
-        //  customClass:
-        // 	container:
-        // 	popup:
-        // 	header:
-        // 	title:
-        // 	closeButton:
-        // 	icon:
-        // 	image:
-        // 	content:
-        // 	input:
-        // 	actions:
-        // 	confirmButton:
-        // 	cancelButton:
-        // 	footer:	
-    
-        // showConfirmButton:
-        // confirmButtonColor:
-        // confirmButtonAriaLabel:
-    
-        // showCancelButton:
-        // cancelButtonText:
-        // cancelButtonColor:
-        // cancelButtonAriaLabel:
-        
-        // buttonsStyling:
-        // showCloseButton:
-        // closeButtonAriaLabel:
-    }); ;
-    agregarAlArry(carrito,articulo1);
+    }); 
+    let pregunta = document.getElementById("Unidades-remeras").value;
+    for (let i = 0; i < pregunta; i++) {
+        agregarAlArry(carrito,articulo1)}
+    return
 };
 
+document.getElementById("btnChomba").onclick = function() { 
+    Swal.fire({
+        title: "Agregastes  al carrito!", 
+        text: "Chomba deportiva",
+        icon: "success",
+        confirmButtonText: "continuar comprando",
+        width: "20%",
+        padding: "5rem",        
+        backdrop: true,
+        position:"top-end",
+        timer: "4000",
+        allowOutsideClick: true,
+        allowEscapeKey: true,
+        allowEnterKey: true,
+    }); 
+    let pregunta = document.getElementById("Unidades-chombas").value;
+    for (let i = 0; i < pregunta; i++) {
+        agregarAlArry(carrito,articulo4)}
+    return
+};
 
-Swal.fire({
-    title:"Binenvenidos a Don Juan"
-});
+document.getElementById("btnCamisa").onclick = function() { 
+    Swal.fire({
+        title: "Agregastes  al carrito!", 
+        text: "Camisa Don Juan",
+        icon: "success",
+        confirmButtonText: "continuar comprando",
+        width: "20%",
+        padding: "5rem",        
+        backdrop: true,
+        position:"top-end",
+        timer: "4000",
+        allowOutsideClick: true,
+        allowEscapeKey: true,
+        allowEnterKey: true,
+    }); 
+    let pregunta = document.getElementById("Unidades-camisas").value;
+    for (let i = 0; i < pregunta; i++) {
+        agregarAlArry(carrito,articulo3)}
+    return
+
+};
+document.getElementById("btnPantalon").onclick = function() { 
+    Swal.fire({
+        title: "Agregastes  al carrito!", 
+        text: "Pantalon de vestir",
+        icon: "success",
+        confirmButtonText: "continuar comprando",
+        width: "20%",
+        padding: "5rem",        
+        backdrop: true,
+        position:"top-end",
+        timer: "4000",
+        allowOutsideClick: true,
+        allowEscapeKey: true,
+        allowEnterKey: true,
+    }); 
+    let pregunta = document.getElementById("Unidades-pantalones").value;
+    for (let i = 0; i < pregunta; i++) {
+        agregarAlArry(carrito,articulo2)}
+    return
+
+};
+
+document.getElementById("btnZapatos").onclick = function() { 
+    Swal.fire({
+        title: "Agregastes  al carrito!", 
+        text: "Zapatos",
+        icon: "success",
+        confirmButtonText: "continuar comprando",
+        width: "20%",
+        padding: "5rem",        
+        backdrop: true,
+        position:"top-end",
+        timer: "4000",
+        allowOutsideClick: true,
+        allowEscapeKey: true,
+        allowEnterKey: true,
+    }); 
+    let pregunta = document.getElementById("Unidades-zapatos").value;
+    for (let i = 0; i < pregunta; i++) {
+        agregarAlArry(carrito,articulo5)}
+    return
+};
+document.getElementById("Finalizarcompra").onclick = function() {
+    Swal.fire({
+        title: "Gracias por tu compra!", 
+        text: carritoFinal.value,
+        icon: "success",
+        confirmButtonText: "Finalizar",})
+}
+
+// Swal.fire({
+//     title:"Binenvenidos a Don Juan"
+// });
 
 // let Compra = prompt("Introduzca el número del artículo deseado. \n Si desea terminar la compra escriba: finalizar")
 
@@ -154,3 +218,5 @@ Swal.fire({
 // }
 
 console.log(carrito);
+
+console.log(carritoFinal);

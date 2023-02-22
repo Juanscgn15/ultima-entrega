@@ -28,7 +28,7 @@
 .imagen { 
     height: 33vh;
 align-self: center;
-margin-bottom: 50px;
+margin-bottom: 2rem;
 }
 .eleccion{ align-self:center;
 margin: 1rem;
@@ -36,3 +36,14 @@ margin-bottom: 100px
 }
 .btn { align-self:center;
 margin-bottom: 80px}
+
+.cantidad {
+    height: 40px;
+    width: 50px;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+}
+.unidades {
+    margin-top: 0.5rem;
+}
