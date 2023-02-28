@@ -18,14 +18,17 @@ const btnChomba = document.getElementById("btnChomba")
 const btnCamisa = document.getElementById("btncamisa")
 const btnPantalon = document.getElementById("btnpantalon")
 const btnZapatos = document.getElementById("btnZapatos")
-const  carritoFinal = carrito.reduce((acc,el)=> {
-    return acc + el.precio},0)
-
+const verCarrito = document.getElementById("verCarrito")
+const carritoContainer = document.getElementById("carrito-container");
+const  carritoFinal = carrito.reduce ((acc,el) => acc + el.precio,0);
 //function
 
 
 function agregarAlArry(arry,articulo) {
 arry.push(articulo)
+}
+function guardarEnLS(arr) {
+    return localStorage.setItem("carritoFinalLS",JSON.stringify(arr))
 }
 
 
@@ -46,7 +49,9 @@ document.getElementById("btnRemera").onclick = function() {
     }); 
     let pregunta = document.getElementById("Unidades-remeras").value;
     for (let i = 0; i < pregunta; i++) {
-        agregarAlArry(carrito,articulo1)}
+        agregarAlArry(carrito,articulo1)
+    }
+    guardarEnLS(carrito);
     return
 };
 
@@ -68,6 +73,7 @@ document.getElementById("btnChomba").onclick = function() {
     let pregunta = document.getElementById("Unidades-chombas").value;
     for (let i = 0; i < pregunta; i++) {
         agregarAlArry(carrito,articulo4)}
+        guardarEnLS(carrito);
     return
 };
 
@@ -89,6 +95,7 @@ document.getElementById("btnCamisa").onclick = function() {
     let pregunta = document.getElementById("Unidades-camisas").value;
     for (let i = 0; i < pregunta; i++) {
         agregarAlArry(carrito,articulo3)}
+        guardarEnLS(carrito);
     return
 
 };
@@ -110,6 +117,7 @@ document.getElementById("btnPantalon").onclick = function() {
     let pregunta = document.getElementById("Unidades-pantalones").value;
     for (let i = 0; i < pregunta; i++) {
         agregarAlArry(carrito,articulo2)}
+        guardarEnLS(carrito);
     return
 
 };
@@ -132,6 +140,7 @@ document.getElementById("btnZapatos").onclick = function() {
     let pregunta = document.getElementById("Unidades-zapatos").value;
     for (let i = 0; i < pregunta; i++) {
         agregarAlArry(carrito,articulo5)}
+        guardarEnLS(carrito);
     return
 };
 document.getElementById("Finalizarcompra").onclick = function() {
@@ -140,68 +149,51 @@ document.getElementById("Finalizarcompra").onclick = function() {
         text: carritoFinal.value,
         icon: "success",
         confirmButtonText: "Finalizar",})
-}
+        localStorage.removeItem("carritoFinalLS")
+        }
+
+verCarrito.addEventListener("click",() => {
+carritoContainer.innerHTML = "";
+carritoContainer.style.display= "flex";
+const carritoHeader = document.createElement ("div");
+carritoHeader.className = "carritoHeader";
+carritoHeader.innerHTML = `
+<h1 class="carrito-header-titulo">Carrito.</h1>
+`;
+carritoContainer.append(carritoHeader);
+
+const carritoButton = document.createElement("button");
+carritoButton.innerText = "X";
+carritoButton.className = "btn btn-secondary";
+
+carritoButton.addEventListener("click", () => {
+    carritoContainer.style.display= "none";
+});
+
+carritoContainer.append(carritoButton);
+
+carrito.forEach((producto) => {
+    let carritoContent = document.createElement ("div");
+    carritoContent.className = "carrito-Content";
+    carritoContent.innerHTML = `<h3> ${producto.nombre} </h3>
+    <p> ${producto.precio}$</p>
+    `;
+    carritoContainer.append(carritoContent)
+});
+
+const total = carrito.reduce ((acc,el) => acc + el.precio,0);
+const precioTotal = document.createElement ("div");
+precioTotal.className = "precio-total"
+precioTotal.innerHTML = `Total a pagar: ${total} $`;
+carritoContainer.append(precioTotal);
+
+
+});
 
 // Swal.fire({
 //     title:"Binenvenidos a Don Juan"
 // });
 
-// let Compra = prompt("Introduzca el número del artículo deseado. \n Si desea terminar la compra escriba: finalizar")
-
-// function compra() {
-// while (Compra != "finalizar") {
-    
-//     switch (Compra) {
-//         case "1":
-//             console.log("remera basica");
-//             pregunta =  parseInt(prompt ("¿Cuantas unidades?"))
-//         for (let i = 0; i < pregunta; i++) {
-//             console.log(agregarAlArry(carrito,articulo1))
-//             }
-    
-//             break;
-
-//         case "2":
-//             console.log("Pantalon de vestir");
-//             pregunta =  parseInt(prompt ("¿Cuantas unidades?"))
-//         for (let i = 0; i < pregunta; i++) {
-//             console.log(agregarAlArry(carrito,articulo2))
-//             }
-//             break;
-
-//         case "3":
-//             console.log("Camisa Don Juan");
-//         pregunta =  parseInt(prompt ("¿Cuantas unidades?"))
-//         for (let i = 0; i < pregunta; i++) {
-//             console.log(agregarAlArry(carrito,articulo3))
-//             }
-//             break;
-        
-//         case "4":
-//             console.log("Chomba deportiva");
-//         pregunta =  parseInt(prompt ("¿Cuantas unidades?"))
-//         for (let i = 0; i < pregunta; i++) {
-//             console.log(agregarAlArry(carrito,articulo4))
-//             }
-//             break;
-        
-//             case "5":
-//                 console.log("Zapatos");
-//         pregunta =  parseInt(prompt ("¿Cuantas unidades?"))
-//         for (let i = 0; i < pregunta; i++) {
-//             console.log(agregarAlArry(carrito,articulo5))
-//             }
-//                 break;
-        
-//             default:
-//                 alert("seleccione un item valido")
-//             break;
-//     }
-//     Compra = prompt("Introduzca el número del artículo deseado. Si desea terminar la compra escriba: finalizar")
-// }
-
-// }
-// compra();
 // const  carritoFinal = carrito.reduce((acc,el)=> {
 //     return acc + el.precio
 // },0)
@@ -219,4 +211,4 @@ document.getElementById("Finalizarcompra").onclick = function() {
 
 console.log(carrito);
 
-console.log(carritoFinal);
+
